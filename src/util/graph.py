@@ -5,11 +5,15 @@ import matplotlib.pyplot as plt
 
 def show_graph(points, convexhull, color):
   """Show result in graph"""
-  plt.scatter(points, c=color)
-  length_convex = len(convexhull)
+  plt.scatter(points[:,0], points[:,1], c=color)
+  x = []
+  y = []
 
-  for i in range(length_convex):
-    plt.plot(convexhull[i % length_convex], 
-      convexhull[(i+1) % length_convex], 
-      color)
+  for i in convexhull:
+    x.append(i[0])
+    y.append(i[1])
   
+  plt.plot(x, y, color)
+  plt.plot([convexhull[-1][0],convexhull[0][0]],
+            [convexhull[-1][1],convexhull[0][1]],
+            color)

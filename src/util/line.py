@@ -20,7 +20,7 @@ def point_cosine(p: np.ndarray, line:tuple[np.ndarray,np.ndarray]):
   na = np.sum(a * a)
   nb = np.sum(b * b)
 
-  return np.sum(a * b) / (na * nb)
+  return np.sum(a * b), na * nb 
 
 def point_position(p: np.ndarray, line:tuple[np.ndarray,np.ndarray]):
   """Fungsi untuk menentukan posisi titik
@@ -44,10 +44,10 @@ def max_point(points: list, line: tuple) -> np.ndarray:
       maxDist = dist
       maxPoint = i
     elif maxDist == dist:
-      curCos = point_cosine(maxPoint, line)
-      iCos = point_cosine(i, line)
+      curCosA, curCosB = point_cosine(maxPoint, line)
+      iCosA, iCosB = point_cosine(i, line)
 
-      if(iCos < curCos):
+      if(curCosA * iCosB < iCosA * curCosB):
         # Sudut lebih besar
         maxPoint = i
         maxDist = dist
