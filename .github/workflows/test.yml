@@ -15,7 +15,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ env.pythonLocation }}
-          key: tubes-${{ env.pythonLocation }}-${{ hashFiles('main.py') }}-${{ hashFiles('requirements.txt') }}
+          key: tubes-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}
       - name: Install Depedency
         run: |
           pip install --upgrade --upgrade-strategy eager -r requirements.txt
