@@ -3,9 +3,9 @@
 
 import matplotlib.pyplot as plt
 
-def show_graph(points, convexhull, color):
+def show_graph(points, convexhull, color, label):
   """Show result in graph"""
-  plt.scatter(points[:,0], points[:,1], c=color)
+  plt.scatter(points[:,0], points[:,1], c=color, label=label)
   x = []
   y = []
 
