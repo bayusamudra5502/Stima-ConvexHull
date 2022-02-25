@@ -12,7 +12,7 @@ def myConvexHull(points: np.ndarray) -> list:
   upper = []
   lower = []
 
-  pointSorted = np.array(points)
+  pointSorted = np.copy(points)
   quicksort(pointSorted, compare_point)
   line = (pointSorted[0], pointSorted[-1])
 
@@ -30,8 +30,8 @@ def myConvexHull(points: np.ndarray) -> list:
 
 def convexHullPartition(points: list, anchor: tuple) -> list:
   """Partisi untuk perhitungan convexhull"""
-  if len(point) <= 1:
-    return point
+  if len(points) <= 1:
+    return points
 
   point = max_point(points, anchor)
   lineleft = (anchor[0], point)

@@ -1,5 +1,5 @@
 import numpy as np
-from util.line import point_distance, point_position
+from util.line import max_point, point_distance, point_position
 
 def test_jarak0():
   p = np.array([0,0])
@@ -57,3 +57,16 @@ def test_posisi3():
 
   res = point_position(p, tuple([a, b]))
   assert res == 0
+
+def test_maxpoint():
+  p = [
+    np.array([1,1]),
+    np.array([2,2]),
+    np.array([3,3]),
+    np.array([2,5]),
+    np.array([2,3]),
+    np.array([3,10])
+  ]
+
+  result = max_point(p, (np.array([0,0]), np.array([10,10])))
+  assert (result == np.array([3,10])).all()

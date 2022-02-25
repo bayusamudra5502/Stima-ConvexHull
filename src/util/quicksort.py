@@ -16,24 +16,24 @@ def partition(arr: np.ndarray, comparator: Function) -> int:
     while(p < len(arr) and comparator(arr[p],arr[0]) < 0):
       p += 1
 
-    while(p > 0 and comparator(arr[q],arr[0]) > 0):
+    while(q > 0 and comparator(arr[q],arr[0]) > 0):
       q -= 1
     
     if p <= q:
-      tmp = arr[p]
-      arr[p] = arr[q]
+      tmp = np.copy(arr[p])
+      arr[p] = np.copy(arr[q])
       arr[q] = tmp
       p += 1
       q -= 1
   
   
-  tmp = arr[0]
-  arr[0] = arr[q]
+  tmp = np.copy(arr[0])
+  arr[0] = np.copy(arr[q])
   arr[q] = tmp
   return q
 
 def quicksort(arr: np.ndarray, comparator: Function) -> None:
-  """Pengurutan array menggunakan quicksrt"""
+  """Pengurutan array menggunakan quicksort"""
   if len(arr) <= 1:
     return
   

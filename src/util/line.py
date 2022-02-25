@@ -51,3 +51,5 @@ def max_point(points: list, line: tuple) -> np.ndarray:
         # Sudut lebih besar
         maxPoint = i
         maxDist = dist
+  
+  return maxPoint
