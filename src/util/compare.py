@@ -4,6 +4,7 @@
 import numpy as np
 
 def compare_point(p1: np.ndarray, p2: np.ndarray):
+  """Membandingkan dua buah titik"""
   if(p1[0] == p2[0]):
     return p1[1] - p2[1]
   else:

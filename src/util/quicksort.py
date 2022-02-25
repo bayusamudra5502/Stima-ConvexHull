@@ -5,6 +5,7 @@ from pyclbr import Function
 import numpy as np
 
 def partition(arr: np.ndarray, comparator: Function) -> int:
+  """Melakukan Partisi pada tiap state dari quicksort"""
   if len(arr) == 0:
     return 0
 
@@ -31,9 +32,10 @@ def partition(arr: np.ndarray, comparator: Function) -> int:
   arr[q] = tmp
   return q
 
-def quicksort(arr: np.ndarray, comparator: Function):
+def quicksort(arr: np.ndarray, comparator: Function) -> None:
+  """Pengurutan array menggunakan quicksrt"""
   if len(arr) <= 1:
-    return arr
+    return
   
   idx = partition(arr, comparator)
   quicksort(arr[:idx], comparator)
