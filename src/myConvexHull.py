@@ -1,7 +1,6 @@
 # Library myConvexHull
 # Mencari Convex Hull dari larik titik dua dimensi
 
-from turtle import color
 import numpy as np
 
 from util.line import max_point, point_position
